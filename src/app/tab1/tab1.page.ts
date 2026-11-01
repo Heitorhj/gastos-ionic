@@ -32,7 +32,8 @@ import {
   ],
 })
 export class Tab1Page {
-  gastos = [{ descricao: 'Almoço', valor: 25 }];
+  
+  gastos: { descricao: string; valor: number }[] = [];
 
   descricao = '';
   valor = 0;
