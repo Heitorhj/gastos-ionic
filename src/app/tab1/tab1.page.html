@@ -11,6 +11,7 @@
     </ion-toolbar>
   </ion-header>
 
+  <!-- Diretiva estrutural @for utilizada para iterar sobre a lista de gastos -->
   <ion-list>
     @for (gasto of gastos; track gasto.descricao) {
     <ion-item>
@@ -20,6 +21,7 @@
     }
   </ion-list>
 
+  <!-- Diretiva personalizada [(ngModel)] utilizada para vincular os valores dos inputs ao componente -->
   <ion-input label="Descrição" labelPlacement="floating" fill="outline" [(ngModel)]="descricao"></ion-input>
   <ion-input
     class="value-input"
