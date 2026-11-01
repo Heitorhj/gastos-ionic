@@ -5,6 +5,16 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
+
+   <ion-list>
+    @for (gasto of gastos; track gasto.descricao) {
+      <ion-item>
+        {{ gasto.descricao }}
+        {{ gasto.valor }}
+      </ion-item>
+    }
+  </ion-list>
+
   <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large">Tab 1</ion-title>
