@@ -16,6 +16,11 @@
 
   <ion-button (click)="adicionarGasto()">Adicionar</ion-button>
 
+  <ion-input label="Descrição: " [(ngModel)]="descricao"></ion-input>
+  <p>{{ descricao }}</p>
+  <ion-input label="Valor: R$ " [(ngModel)]="valor"></ion-input>
+  <p>{{ valor }}</p>
+
   <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large">Tab 1</ion-title>

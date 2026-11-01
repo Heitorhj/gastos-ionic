@@ -1,5 +1,15 @@
-import { Component } from '@angular/core';
-import { IonHeader, IonToolbar, IonTitle, IonContent, IonItem, IonList, IonButton } from '@ionic/angular';
+﻿import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import {
+  IonHeader,
+  IonToolbar,
+  IonTitle,
+  IonContent,
+  IonItem,
+  IonList,
+  IonButton,
+  IonInput,
+} from '@ionic/angular';
 
 import { ExploreContainerComponent } from '../explore-container/explore-container.component';
 
@@ -7,17 +17,27 @@ import { ExploreContainerComponent } from '../explore-container/explore-containe
   selector: 'app-tab1',
   templateUrl: 'tab1.page.html',
   styleUrls: ['tab1.page.scss'],
-  imports: [IonHeader, IonToolbar, IonTitle, IonContent, ExploreContainerComponent, IonItem, IonList, IonButton],
+  standalone: true,
+  imports: [
+    IonHeader,
+    IonToolbar,
+    IonTitle,
+    IonContent,
+    IonItem,
+    IonList,
+    IonButton,
+    IonInput,
+    FormsModule,
+    ExploreContainerComponent,
+  ],
 })
 export class Tab1Page {
+  gastos = [{ descricao: 'Almoço', valor: 25 }];
 
-  gastos = [
-    {descricao : 'Almoço', valor : 25}
-  ];
+  descricao = '';
+  valor = 0;
 
-  adicionarGasto() {
-    this.gastos.push({ descricao : 'gasolina', valor : 500 });
+  adicionarGasto(): void {
+    this.gastos.push({ descricao: this.descricao, valor: this.valor });
   }
-
-  constructor() {}
 }
