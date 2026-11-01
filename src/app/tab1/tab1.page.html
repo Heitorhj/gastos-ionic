@@ -9,11 +9,12 @@
    <ion-list>
     @for (gasto of gastos; track gasto.descricao) {
       <ion-item>
-        {{ gasto.descricao }}
-        {{ gasto.valor }}
+        {{ gasto.descricao }} - R$ {{ gasto.valor }}
       </ion-item>
     }
   </ion-list>
+
+  <ion-button (click)="adicionarGasto()">Adicionar</ion-button>
 
   <ion-header collapse="condense">
     <ion-toolbar>
